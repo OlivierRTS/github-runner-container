@@ -16,7 +16,6 @@ RUNNER_TOKEN="$(curl -L \
   https://api.github.com/orgs/$ORGA/actions/runners/registration-token \
   | jq -r '.token')"
 
-echo $RUNNER_TOKEN
 if [ -z "$RUNNER_TOKEN" ]; then
   echo "Fatal error, check GitHub CLI auth."
   exit 1
@@ -34,4 +33,3 @@ echo "DEBUG OK 2 TOKEN"
   --replace
 
 ./run.sh
-
