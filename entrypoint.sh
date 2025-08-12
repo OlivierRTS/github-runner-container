@@ -6,9 +6,6 @@ echo "DEBUG OK 1 $ORGA"
 RUNNER_NAME="az-rts-si-1"
 RUNNER_WORKDIR="/home/runner"
 LABELS="az-rts-si"
-echo $GITHUB_PAT
-echo $RUNNER_TOKEN_ENV
-echo $REGISTRATION_TOKEN_API_URL
 curl -L \
   -X POST \
   -H "Accept: application/vnd.github+json" \
@@ -27,9 +24,8 @@ if [ -z "$RUNNER_TOKEN" ]; then
   echo "Fatal error, check GitHub CLI auth."
   exit 1
 fi
-echo $RUNNER_TOKEN
-RUNNER_TOKEN=$RUNNER_TOKEN_ENV
-echo "DEBUG OK 2 TOKEN"
+
+echo "DEBUG OK 2 TOKEN $RUNNER_TOKEN"
 
 ./config.sh \
   --url https://github.com/$ORGA \
