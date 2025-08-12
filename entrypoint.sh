@@ -3,7 +3,7 @@
 set -e
 
 echo "DEBUG OK 1 $ORGA"
-RUNNER_NAME="az-rts-si-runnercont-$(hostname)"
+RUNNER_NAME="az-rts-si-1"
 RUNNER_WORKDIR="/home/runner"
 LABELS="az-rts-si"
 echo $GITHUB_PAT
